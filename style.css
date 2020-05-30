@@ -16,7 +16,7 @@ section {
 }
 button {
   width: 60%;
-  padding-top: 2em;
+  padding: 2em;
   background: rgb(40, 40, 163);
   color: white;
   margin-bottom: 2em;
