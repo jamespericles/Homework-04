@@ -1,5 +1,7 @@
 body {
   background: rgba(153, 153, 243, 0.726);
+  padding-left: 20%;
+  padding-right: 10%;
 }
 section {
   width: 100%;
