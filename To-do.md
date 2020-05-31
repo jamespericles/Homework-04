@@ -22,3 +22,5 @@
 - Make answer buttons hidden until user press begin
 
 Notes: I expect that the stop propogation from 01-Class-Content/04-Web-APIs/01-Activities/16-Ins_Event_Bubbling will come in handy
+
+In order to remove time from timer as penalty for wrong answer, I may need to have a keypress listen for all the wrong answers at a given time, with the consequence being a loss of time
