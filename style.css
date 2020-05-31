@@ -30,3 +30,7 @@ button {
   margin-bottom: 2em;
   justify-content: center;
 }
+
+#timer {
+  text-align: right;
+}

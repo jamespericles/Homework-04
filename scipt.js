@@ -1,6 +1,8 @@
 const questionEl = document.getElementById("question");
 const answerEl = document.getElementById("answer");
 const startEl = document.getElementById("start");
+const timerEl = document.getElementById("timer");
+
 const quizQuestions = [
   {
     question: "INSERT QUESTION HERE?",
