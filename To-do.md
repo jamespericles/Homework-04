@@ -21,6 +21,7 @@
 - Have text in buttons be centered
 - Make answer buttons hidden until user press begin
 - Make timer inline with where the questions are
+- Make timer not beign until start is clicked
 
 Notes: I expect that the stop propogation from 01-Class-Content/04-Web-APIs/01-Activities/16-Ins_Event_Bubbling will come in handy
 
