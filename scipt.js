@@ -126,7 +126,9 @@ if (startEl) {
     if (answer == questions[runningQuestion].correct) {
       // answer is correct
       score++;
-    } else answer == questions[runningQuestion].incorrect;
+    } else if (answer == questions[runningQuestion].incorrect) {
+      gameTimer--;
+    }
     count = 0;
     if (runningQuestion < lastQuestion) {
       runningQuestion++;
