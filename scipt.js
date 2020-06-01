@@ -26,6 +26,9 @@ let questions = [
     choice3: "<-- -->",
     choice4: "/*/*/",
     correct: "1",
+    incorrect: "2",
+    incorrect: "3",
+    incorrect: "4",
   },
   {
     question: "What does HTML stand for?",
@@ -34,6 +37,9 @@ let questions = [
     choice3: "Hyper Text Markup Language",
     choice4: "Language Markup Hyper Text",
     correct: "3",
+    incorrect: "1",
+    incorrect: "2",
+    incorrect: "4",
   },
   {
     question: "What file extension should CSS files have?",
@@ -42,6 +48,9 @@ let questions = [
     choice3: ".csss",
     choice4: ".cssc",
     correct: "1",
+    incorrect: "2",
+    incorrect: "3",
+    incorrect: "4",
   },
   {
     question: "What is JavaScript meant to add to a webpage?",
@@ -50,6 +59,9 @@ let questions = [
     choice3: "Elements such as <div> and <body>",
     choice4: "Words",
     correct: "1",
+    incorrect: "2",
+    incorrect: "3",
+    incorrect: "4",
   },
   {
     question: "What is the root tag of HTML?",
@@ -58,6 +70,9 @@ let questions = [
     choice3: "<title>",
     choice4: "<head>",
     correct: "2",
+    incorrect: "1",
+    incorrect: "3",
+    incorrect: "4",
   },
 ];
 
@@ -111,7 +126,7 @@ if (startEl) {
     if (answer == questions[runningQuestion].correct) {
       // answer is correct
       score++;
-    }
+    } else answer == questions[runningQuestion].incorrect;
     count = 0;
     if (runningQuestion < lastQuestion) {
       runningQuestion++;
