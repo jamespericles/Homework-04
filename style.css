@@ -22,7 +22,7 @@ button {
   margin-bottom: 2em;
   justify-content: center;
 }
-.start {
+#start {
   width: 60%;
   padding-top: 2em;
   background: white;
@@ -33,4 +33,12 @@ button {
 
 #timer {
   text-align: right;
+}
+
+#question {
+  width: 500px;
+  height: 125px;
+  position: absolute;
+  right: 0;
+  top: 0;
 }

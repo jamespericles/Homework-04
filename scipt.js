@@ -1,7 +1,8 @@
 // Variables
+const quiz = document.getElementById("quiz");
 const questionEl = document.getElementById("question");
 const answerEl = document.getElementById("answer");
-const startEl = document.getElementsByClassName("start");
+const startEl = document.getElementById("start");
 const timerEl = document.getElementById("timer");
 const choice1 = document.getElementById("1");
 const choice2 = document.getElementById("2");
@@ -12,7 +13,9 @@ let isWaiting = false;
 let isRunning = false;
 let seconds = 120;
 let finalCountdown = false;
+let runningQuestion = 0;
 
+// Quiz questions
 const questions = [
   {
     question: "What is the symbol to comment in JavaScipt?",
@@ -66,8 +69,7 @@ const questions = [
   },
 ];
 
-let runningQuestion = 0;
-
+// Render questions
 function renderQuestion() {
   let q = questions[runningQuestion];
 
@@ -78,6 +80,11 @@ function renderQuestion() {
   choice4.innerHTML = q.choice4;
 }
 
+if (startEl) {
+  startEl.addEventListener("click", startQuiz);
+}
+
+// Create timer
 function gameTimer() {
   let minutes = Math.round((seconds - 30) / 60);
   let remainingSeconds = seconds % 60;
@@ -94,4 +101,12 @@ function gameTimer() {
   }
 }
 
-countdownTimer = setInterval(gameTimer, 1000);
+// Start quiz
+function startQuiz() {
+  startEl.style.display = "none";
+  renderQuestion();
+  gameTimer();
+  gameTimer.style.display;
+  quiz.style.display;
+  countdownTimer = setInterval(gameTimer, 1000);
+}
