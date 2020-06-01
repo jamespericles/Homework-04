@@ -56,7 +56,7 @@ let questions = [
     question: "What is JavaScript meant to add to a webpage?",
     choice1: "Functionality",
     choice2: "Stylings",
-    choice3: "Elements such as <div> and <body>",
+    choice3: "Elements",
     choice4: "Words",
     correct: "1",
     incorrect: "2",
@@ -116,7 +116,6 @@ if (startEl) {
     renderQuestion();
     quiz.style.display = "block";
     gameTimer();
-    //   gameTimer.style.display;
     countdownTimer = setInterval(gameTimer, 1000);
   }
 
@@ -126,7 +125,8 @@ if (startEl) {
     if (answer == questions[runningQuestion].correct) {
       // answer is correct
       score++;
-    } else if (answer == questions[runningQuestion].incorrect) {
+    }
+    if (answer == questions[runningQuestion].incorrect) {
       gameTimer--;
     }
     count = 0;
