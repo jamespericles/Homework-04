@@ -56,3 +56,17 @@ button {
   right: 0;
   top: 0;
 }
+
+.choice {
+  display: inline-block;
+  width: 135px;
+  text-align: center;
+  border: 1px solid grey;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px;
+}
+.choice:hover {
+  border: 2px solid grey;
+  font-weight: bold;
+}
