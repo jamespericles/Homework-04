@@ -141,3 +141,7 @@ if (startEl) {
     }
   }
 }
+
+function scoreRender() {
+  scoreDiv.style.display = "block";
+}
