@@ -8,13 +8,14 @@ const choice1 = document.getElementById("1");
 const choice2 = document.getElementById("2");
 const choice3 = document.getElementById("3");
 const choice4 = document.getElementById("4");
-const score = document.getElementById("score");
+const scoreEl = document.getElementById("score");
 const header = document.getElementById("main-header");
 let isWaiting = false;
 let isRunning = false;
 let seconds = 120;
 let finalCountdown = false;
 let runningQuestion = 0;
+let score = 0;
 
 // Quiz questions
 let questions = [
@@ -74,32 +75,51 @@ function renderQuestion() {
 
 if (startEl) {
   startEl.addEventListener("click", startQuiz);
-}
 
-// Create timer
-function gameTimer() {
-  let minutes = Math.round((seconds - 30) / 60);
-  let remainingSeconds = seconds % 60;
-  if (remainingSeconds < 10) {
-    remainingSeconds = "0" + remainingSeconds;
+  // Create timer
+  function gameTimer() {
+    let minutes = Math.round((seconds - 30) / 60);
+    let remainingSeconds = seconds % 60;
+    if (remainingSeconds < 10) {
+      remainingSeconds = "0" + remainingSeconds;
+    }
+
+    document.getElementById("timer").innerHTML =
+      minutes + ":" + remainingSeconds;
+    if (finalCountdown) {
+      clearInterval(countdownTimer);
+    } else {
+      isWaiting = true;
+      seconds--;
+    }
   }
 
-  document.getElementById("timer").innerHTML = minutes + ":" + remainingSeconds;
-  if (finalCountdown) {
-    clearInterval(countdownTimer);
-  } else {
-    isWaiting = true;
-    seconds--;
+  // Start quiz
+  function startQuiz() {
+    startEl.style.display = "none";
+    header.style.display = "none";
+    renderQuestion();
+    quiz.style.display = "block";
+    gameTimer();
+    //   gameTimer.style.display;
+    countdownTimer = setInterval(gameTimer, 1000);
   }
-}
 
-// Start quiz
-function startQuiz() {
-  startEl.style.display = "none";
-  header.style.display = "none";
-  renderQuestion();
-  quiz.style.display = "block";
-  gameTimer();
-  //   gameTimer.style.display;
-  countdownTimer = setInterval(gameTimer, 1000);
+  // checkAnwer
+
+  function checkAnswer(answer) {
+    if (answer == questions[runningQuestion].correct) {
+      // answer is correct
+      score++;
+    }
+    count = 0;
+    if (runningQuestion < lastQuestion) {
+      runningQuestion++;
+      renderQuestion();
+    } else {
+      // end the quiz and show the score
+      clearInterval(gameTimer);
+      scoreRender();
+    }
+  }
 }
