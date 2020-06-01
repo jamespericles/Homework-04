@@ -119,7 +119,7 @@ if (startEl) {
     countdownTimer = setInterval(gameTimer, 1000);
   }
 
-  // checkAnwer
+  // check anwer
 
   function checkAnswer(answer) {
     if (answer == questions[runningQuestion].correct) {
@@ -127,6 +127,7 @@ if (startEl) {
       score++;
     }
     if (answer == questions[runningQuestion].incorrect) {
+      // amswer is incorrect
       gameTimer--;
     }
     count = 0;
