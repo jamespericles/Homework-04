@@ -59,14 +59,13 @@ button {
 
 .choice {
   display: inline-block;
-  width: 135px;
+  width: 20%;
   text-align: center;
   border: 1px solid grey;
   border-radius: 5px;
   cursor: pointer;
-  padding: 5px;
+  padding: 0.1em;
 }
 .choice:hover {
   border: 2px solid grey;
-  font-weight: bold;
 }

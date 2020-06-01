@@ -76,18 +76,6 @@ let questions = [
   },
 ];
 
-const lastQuestion = questions.length - 1;
-// Render questions
-function renderQuestion() {
-  let q = questions[runningQuestion];
-
-  question.innerHTML = "<p>" + q.question + "</p>";
-  choice1.innerHTML = q.choice1;
-  choice2.innerHTML = q.choice2;
-  choice3.innerHTML = q.choice3;
-  choice4.innerHTML = q.choice4;
-}
-
 if (startEl) {
   startEl.addEventListener("click", startQuiz);
 
@@ -117,6 +105,18 @@ if (startEl) {
     quiz.style.display = "block";
     gameTimer();
     countdownTimer = setInterval(gameTimer, 1000);
+  }
+
+  const lastQuestion = questions.length - 1;
+  // Render questions
+  function renderQuestion() {
+    let q = questions[runningQuestion];
+
+    question.innerHTML = "<p>" + q.question + "</p>";
+    choice1.innerHTML = q.choice1;
+    choice2.innerHTML = q.choice2;
+    choice3.innerHTML = q.choice3;
+    choice4.innerHTML = q.choice4;
   }
 
   // check answer
