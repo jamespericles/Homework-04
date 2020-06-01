@@ -35,6 +35,10 @@ button {
   text-align: right;
 }
 
+#score {
+  text-align: right;
+}
+
 #question {
   width: 85%;
   height: 5%;
