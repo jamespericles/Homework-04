@@ -7,12 +7,13 @@ const choice1 = document.getElementById("1");
 const choice2 = document.getElementById("2");
 const choice3 = document.getElementById("3");
 const choice4 = document.getElementById("4");
+const score = document.getElementById("score");
 let isWaiting = false;
 let isRunning = false;
 let seconds = 120;
 let finalCountdown = false;
 
-const quizQuestions = [
+const questions = [
   {
     question: "What is the symbol to comment in JavaScipt?",
     answer: {
@@ -64,6 +65,18 @@ const quizQuestions = [
     correctAnswer: "2",
   },
 ];
+
+let runningQuestion = 0;
+
+function renderQuestion() {
+  let q = questions[runningQuestion];
+
+  question.innerHTML = "<p>" + q.question + "</p>";
+  choice1.innerHTML = q.choice1;
+  choice2.innerHTML = q.choice2;
+  choice3.innerHTML = q.choice3;
+  choice4.innerHTML = q.choice4;
+}
 
 function gameTimer() {
   let minutes = Math.round((seconds - 30) / 60);
