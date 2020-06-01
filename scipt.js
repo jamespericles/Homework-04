@@ -128,7 +128,7 @@ if (startEl) {
     }
     if (answer == questions[runningQuestion].incorrect) {
       // amswer is incorrect
-      gameTimer--;
+      gameTimer - 10;
     }
     count = 0;
     if (runningQuestion < lastQuestion) {
