@@ -96,8 +96,8 @@ function gameTimer() {
 function startQuiz() {
   startEl.style.display = "none";
   renderQuestion();
+  quiz.style.display = "block";
   gameTimer();
   gameTimer.style.display;
-  quiz.style.display;
   countdownTimer = setInterval(gameTimer, 1000);
 }
