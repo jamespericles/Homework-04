@@ -100,6 +100,6 @@ function startQuiz() {
   renderQuestion();
   quiz.style.display = "block";
   gameTimer();
-  gameTimer.style.display;
+  //   gameTimer.style.display;
   countdownTimer = setInterval(gameTimer, 1000);
 }
