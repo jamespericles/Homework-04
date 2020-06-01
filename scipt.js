@@ -9,6 +9,7 @@ const choice2 = document.getElementById("2");
 const choice3 = document.getElementById("3");
 const choice4 = document.getElementById("4");
 const score = document.getElementById("score");
+const header = document.getElementById("main-header");
 let isWaiting = false;
 let isRunning = false;
 let seconds = 120;
@@ -95,6 +96,7 @@ function gameTimer() {
 // Start quiz
 function startQuiz() {
   startEl.style.display = "none";
+  header.style.display = "none";
   renderQuestion();
   quiz.style.display = "block";
   gameTimer();
