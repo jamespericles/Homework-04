@@ -36,9 +36,8 @@ button {
 }
 
 #question {
-  width: 500px;
-  height: 125px;
-  position: absolute;
+  width: 85%;
+  height: 5%;
   right: 0;
   top: 0;
 }
