@@ -8,12 +8,16 @@ section {
   height: 100%;
 }
 
-.main-content {
-  padding: 1em 1em 1em 3em;
-  box-shadow: 2px 2px 5px #333;
-  background: white;
-  width: 70%;
+#container {
+  margin: 20px auto;
+  background-color: white;
+  height: 300px;
+  width: 700px;
+  border-radius: 5px;
+  box-shadow: 0px 5px 15px 0px;
+  position: relative;
 }
+
 button {
   width: 60%;
   padding: 2em;
@@ -23,12 +27,19 @@ button {
   justify-content: center;
 }
 #start {
-  width: 60%;
-  padding-top: 2em;
-  background: white;
-  color: black;
-  margin-bottom: 2em;
-  justify-content: center;
+  font-size: 1.5em;
+  font-weight: bolder;
+  word-break: break-all;
+  width: 80%;
+  height: 15%;
+  border: 2px solid lightgrey;
+  text-align: center;
+  cursor: pointer;
+  color: lightgrey;
+}
+#start:hover {
+  border: 3px solid lightseagreen;
+  color: lightseagreen;
 }
 
 #timer {
