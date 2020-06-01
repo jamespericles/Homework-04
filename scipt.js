@@ -119,7 +119,7 @@ if (startEl) {
     countdownTimer = setInterval(gameTimer, 1000);
   }
 
-  // check anwer
+  // check answer
 
   function checkAnswer(answer) {
     if (answer == questions[runningQuestion].correct) {
