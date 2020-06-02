@@ -81,7 +81,7 @@ if (startEl) {
   startEl.addEventListener("click", startQuiz);
 }
 // Create score board
-document.getElementById("score").innerHTML = score;
+scoreEl.innerHTML = score;
 
 // Create timer
 function gameTimer() {
@@ -140,14 +140,12 @@ function checkAnswer(answer) {
   if (answer == questions[runningQuestion].correct) {
     // answer is correct
     score++;
+    scoreEl.innerHTML = score;
     console.log("here");
     console.log(answer);
     console.log(questions[runningQuestion].correct);
   } else {
-    // amswer is incorrect
-    console.log("wrong");
-    console.log(answer);
-    console.log(questions[runningQuestion].incorrect);
+    // answer is incorrect
     seconds = seconds - 10;
     gameTimer(seconds);
   }
