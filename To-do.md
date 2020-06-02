@@ -13,9 +13,9 @@
           <!-- - upon clicking start, user is prompted with first question -->
   - show user how many total questions in quiz
   - show user their current position in quiz
-  <!-- - After answering a question, user is prompted with the next question -->
-  <!-- - If users answer is incorrect, they lose time from the timer -->
-  <!-- - if all quetions are answered, the game ends -->
+    <!-- - After answering a question, user is prompted with the next question -->
+    <!-- - If users answer is incorrect, they lose time from the timer -->
+    <!-- - if all quetions are answered, the game ends -->
 - if time runs out, the game ends
 - after the game is finished, users are shown their score and asked to save their initials
 - allow users to press buttons on the key pad to answer questions besides clicking
@@ -29,3 +29,5 @@
 Notes: I expect that the stop propogation from 01-Class-Content/04-Web-APIs/01-Activities/16-Ins_Event_Bubbling will come in handy
 
 In order to remove time from timer as penalty for wrong answer, I may need to have a keypress listen for all the wrong answers at a given time, with the consequence being a loss of time
+
+01-Class-Content/04-Web-APIs/01-Activities/20-Ins_Local-Storage for saving highscores
