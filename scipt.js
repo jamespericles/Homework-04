@@ -1,6 +1,6 @@
 // Variables
 const quiz = document.getElementById("quiz");
-const questionEl = document.getElementById("question");
+const questionEl = document.getElementsByClassName("choice");
 const answerEl = document.getElementById("answer");
 const startEl = document.getElementById("start");
 const timerEl = document.getElementById("timer");
@@ -78,67 +78,71 @@ let questions = [
 
 if (startEl) {
   startEl.addEventListener("click", startQuiz);
+}
 
-  // Create timer
-  function gameTimer() {
-    let minutes = Math.round((seconds - 30) / 60);
-    let remainingSeconds = seconds % 60;
-    if (remainingSeconds < 10) {
-      remainingSeconds = "0" + remainingSeconds;
-    }
-
-    document.getElementById("timer").innerHTML =
-      minutes + ":" + remainingSeconds;
-    if (finalCountdown) {
-      clearInterval(countdownTimer);
-    } else {
-      isWaiting = true;
-      seconds--;
-    }
+// Create timer
+function gameTimer() {
+  let minutes = Math.round((seconds - 30) / 60);
+  let remainingSeconds = seconds % 60;
+  if (remainingSeconds < 10) {
+    remainingSeconds = "0" + remainingSeconds;
   }
 
-  // Start quiz
-  function startQuiz() {
-    startEl.style.display = "none";
-    header.style.display = "none";
+  document.getElementById("timer").innerHTML = minutes + ":" + remainingSeconds;
+  if (finalCountdown) {
+    clearInterval(countdownTimer);
+  } else {
+    isWaiting = true;
+    seconds--;
+  }
+}
+
+// Start quiz
+function startQuiz() {
+  startEl.style.display = "none";
+  header.style.display = "none";
+  console.log(questionEl);
+  for (let i = 0; i < questionEl.length; i++) {
+    questionEl[i].style.display = "inline-block";
+  }
+  // questionEL.style.display = "inline-block";
+  renderQuestion();
+  quiz.style.display = "block";
+  gameTimer();
+  countdownTimer = setInterval(gameTimer, 1000);
+}
+
+const lastQuestion = questions.length - 1;
+// Render questions
+function renderQuestion() {
+  let q = questions[runningQuestion];
+
+  question.innerHTML = "<p>" + q.question + "</p>";
+  choice1.innerHTML = q.choice1;
+  choice2.innerHTML = q.choice2;
+  choice3.innerHTML = q.choice3;
+  choice4.innerHTML = q.choice4;
+}
+
+// check answer
+
+function checkAnswer(answer) {
+  if (answer == questions[runningQuestion].correct) {
+    // answer is correct
+    score++;
+  }
+  if (answer == questions[runningQuestion].incorrect) {
+    // amswer is incorrect
+    gameTimer - 10;
+  }
+  count = 0;
+  if (runningQuestion < lastQuestion) {
+    runningQuestion++;
     renderQuestion();
-    quiz.style.display = "block";
-    gameTimer();
-    countdownTimer = setInterval(gameTimer, 1000);
-  }
-
-  const lastQuestion = questions.length - 1;
-  // Render questions
-  function renderQuestion() {
-    let q = questions[runningQuestion];
-
-    question.innerHTML = "<p>" + q.question + "</p>";
-    choice1.innerHTML = q.choice1;
-    choice2.innerHTML = q.choice2;
-    choice3.innerHTML = q.choice3;
-    choice4.innerHTML = q.choice4;
-  }
-
-  // check answer
-
-  function checkAnswer(answer) {
-    if (answer == questions[runningQuestion].correct) {
-      // answer is correct
-      score++;
-    }
-    if (answer == questions[runningQuestion].incorrect) {
-      // amswer is incorrect
-      gameTimer - 10;
-    }
-    count = 0;
-    if (runningQuestion < lastQuestion) {
-      runningQuestion++;
-      renderQuestion();
-    } else {
-      // end the quiz and show the score
-      clearInterval(gameTimer);
-      scoreRender();
-    }
+  } else {
+    // end the quiz and show the score
+    clearInterval(gameTimer);
+    scoreRender();
   }
 }
 

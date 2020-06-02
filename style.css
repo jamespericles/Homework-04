@@ -58,7 +58,7 @@ button {
 }
 
 .choice {
-  display: inline-block;
+  display: none;
   width: 20%;
   text-align: center;
   border: 1px solid grey;
