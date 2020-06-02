@@ -12,7 +12,7 @@ const scoreEl = document.getElementById("score");
 const header = document.getElementById("main-header");
 let isWaiting = false;
 let isRunning = false;
-let seconds = 11;
+let seconds = 120;
 let finalCountdown = false;
 let runningQuestion = 0;
 let score = 0;
@@ -79,7 +79,6 @@ let questions = [
 
 if (startEl) {
   startEl.addEventListener("click", startQuiz);
-  console.log("here");
 }
 // Create score board
 document.getElementById("score").innerHTML = score;
@@ -91,7 +90,6 @@ function gameTimer() {
   remainingSeconds.toPrecision(2);
   if (remainingSeconds < 10) {
     remainingSeconds = "0" + remainingSeconds;
-    console.log(typeof remainingSeconds);
   }
 
   document.getElementById("timer").innerHTML = minutes + ":" + remainingSeconds;
@@ -102,7 +100,6 @@ function gameTimer() {
     seconds--;
   }
   if (minutes == 0 && remainingSeconds == "00") {
-    console.log("here");
     endQuiz();
   }
 }
@@ -116,15 +113,13 @@ function endQuiz() {
 function startQuiz() {
   startEl.style.display = "none";
   header.style.display = "none";
-  console.log(questionEl);
   for (let i = 0; i < questionEl.length; i++) {
     questionEl[i].style.display = "inline-block";
   }
   renderQuestion();
   quiz.style.display = "block";
-  gameTimer();
+  gameTimer(seconds);
   countdownTimer = setInterval(gameTimer, 1000);
-  console.log(countdownTimer);
 }
 
 const lastQuestion = questions.length - 1;
@@ -145,10 +140,16 @@ function checkAnswer(answer) {
   if (answer == questions[runningQuestion].correct) {
     // answer is correct
     score++;
-  }
-  if (answer == questions[runningQuestion].incorrect) {
+    console.log("here");
+    console.log(answer);
+    console.log(questions[runningQuestion].correct);
+  } else {
     // amswer is incorrect
-    gameTimer() - 10;
+    console.log("wrong");
+    console.log(answer);
+    console.log(questions[runningQuestion].incorrect);
+    seconds = seconds - 10;
+    gameTimer(seconds);
   }
   count = 0;
   if (runningQuestion < lastQuestion) {
