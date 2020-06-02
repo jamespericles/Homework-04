@@ -12,7 +12,7 @@ const scoreEl = document.getElementById("score");
 const header = document.getElementById("main-header");
 let isWaiting = false;
 let isRunning = false;
-let seconds = 10;
+let seconds = 11;
 let finalCountdown = false;
 let runningQuestion = 0;
 let score = 0;
@@ -79,14 +79,15 @@ let questions = [
 if (startEl) {
   startEl.addEventListener("click", startQuiz);
 }
-
+// Create score board
+document.getElementById("score").innerHTML = score;
 // Create timer
 function gameTimer() {
   let minutes = Math.round((seconds - 30) / 60);
   let remainingSeconds = seconds % 60;
+  remainingSeconds.toPrecision(2);
   if (remainingSeconds < 10) {
     remainingSeconds = "0" + remainingSeconds;
-    remainingSeconds = parseInt(remainingSeconds, 2);
     console.log(typeof remainingSeconds);
   }
 
