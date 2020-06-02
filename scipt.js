@@ -145,6 +145,8 @@ function checkAnswer(answer) {
     // answer is incorrect
     seconds = seconds - 10;
     gameTimer(seconds);
+    runningQuestion++;
+    renderQuestion();
   }
   count = 0;
   if (runningQuestion < lastQuestion) {
