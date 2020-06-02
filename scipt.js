@@ -16,6 +16,7 @@ let seconds = 11;
 let finalCountdown = false;
 let runningQuestion = 0;
 let score = 0;
+let countdownTimer;
 
 // Quiz questions
 let questions = [
@@ -78,6 +79,7 @@ let questions = [
 
 if (startEl) {
   startEl.addEventListener("click", startQuiz);
+  console.log("here");
 }
 // Create score board
 document.getElementById("score").innerHTML = score;
@@ -94,14 +96,20 @@ function gameTimer() {
 
   document.getElementById("timer").innerHTML = minutes + ":" + remainingSeconds;
   if (finalCountdown) {
-    clearInterval(countdownTimer);
+    endQuiz();
   } else {
     isWaiting = true;
     seconds--;
   }
-  if (minutes === 0 && remainingSeconds === 0) {
-    clearInterval(countdownTimer);
+  if (minutes == 0 && remainingSeconds == "00") {
+    console.log("here");
+    endQuiz();
   }
+}
+
+// End quiz elements
+function endQuiz() {
+  timerEl.style.display = "none";
 }
 
 // Start quiz
@@ -116,6 +124,7 @@ function startQuiz() {
   quiz.style.display = "block";
   gameTimer();
   countdownTimer = setInterval(gameTimer, 1000);
+  console.log(countdownTimer);
 }
 
 const lastQuestion = questions.length - 1;
