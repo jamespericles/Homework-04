@@ -12,7 +12,7 @@ const scoreEl = document.getElementById("score");
 const header = document.getElementById("main-header");
 let isWaiting = false;
 let isRunning = false;
-let seconds = 120;
+let seconds = 10;
 let finalCountdown = false;
 let runningQuestion = 0;
 let score = 0;
@@ -86,6 +86,8 @@ function gameTimer() {
   let remainingSeconds = seconds % 60;
   if (remainingSeconds < 10) {
     remainingSeconds = "0" + remainingSeconds;
+    remainingSeconds = parseInt(remainingSeconds, 2);
+    console.log(typeof remainingSeconds);
   }
 
   document.getElementById("timer").innerHTML = minutes + ":" + remainingSeconds;
@@ -94,6 +96,9 @@ function gameTimer() {
   } else {
     isWaiting = true;
     seconds--;
+  }
+  if (minutes === 0 && remainingSeconds === 0) {
+    clearInterval(countdownTimer);
   }
 }
 
