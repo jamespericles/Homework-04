@@ -112,7 +112,6 @@ function startQuiz() {
   for (let i = 0; i < questionEl.length; i++) {
     questionEl[i].style.display = "inline-block";
   }
-  // questionEL.style.display = "inline-block";
   renderQuestion();
   quiz.style.display = "block";
   gameTimer();
@@ -152,7 +151,3 @@ function checkAnswer(answer) {
     scoreRender();
   }
 }
-
-// function scoreRender() {
-//   scoreDiv.style.display = "block";
-// }
