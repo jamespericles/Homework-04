@@ -105,11 +105,6 @@ function gameTimer() {
   }
 }
 
-// End quiz elements
-function endQuiz() {
-  timerEl.style.display = "none";
-}
-
 // Start quiz
 function startQuiz() {
   startEl.style.display = "none";
@@ -158,6 +153,11 @@ function checkAnswer(answer) {
     clearInterval(gameTimer);
     scoreRender();
   }
+}
+
+// End quiz elements
+function endQuiz() {
+  timerEl.style.display = "none";
 }
 
 function scoreRender() {
