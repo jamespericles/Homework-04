@@ -81,6 +81,7 @@ if (startEl) {
 }
 // Create score board
 document.getElementById("score").innerHTML = score;
+
 // Create timer
 function gameTimer() {
   let minutes = Math.round((seconds - 30) / 60);
@@ -139,7 +140,7 @@ function checkAnswer(answer) {
   }
   if (answer == questions[runningQuestion].incorrect) {
     // amswer is incorrect
-    gameTimer - 10;
+    gameTimer() - 10;
   }
   count = 0;
   if (runningQuestion < lastQuestion) {
@@ -152,6 +153,6 @@ function checkAnswer(answer) {
   }
 }
 
-function scoreRender() {
-  scoreDiv.style.display = "block";
-}
+// function scoreRender() {
+//   scoreDiv.style.display = "block";
+// }
