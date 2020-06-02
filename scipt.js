@@ -10,6 +10,7 @@ const choice3 = document.getElementById("3");
 const choice4 = document.getElementById("4");
 const scoreEl = document.getElementById("score");
 const header = document.getElementById("main-header");
+const endGame = document.getElementById("endGame");
 let isWaiting = false;
 let isRunning = false;
 let seconds = 120;
@@ -157,4 +158,14 @@ function checkAnswer(answer) {
     clearInterval(gameTimer);
     scoreRender();
   }
+}
+
+function scoreRender() {
+  endGame.style.display = "block";
+  quiz.style.display = "none";
+  choice1.style.display = "none";
+  choice2.style.display = "none";
+  choice3.style.display = "none";
+  choice4.style.display = "none";
+  clearInterval(gameTimer);
 }

@@ -69,3 +69,7 @@ button {
 .choice:hover {
   border: 2px solid grey;
 }
+
+#endGame {
+  display: none;
+}
