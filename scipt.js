@@ -141,9 +141,6 @@ function checkAnswer(answer) {
     // answer is correct
     score++;
     scoreEl.innerHTML = score;
-    console.log("here");
-    console.log(answer);
-    console.log(questions[runningQuestion].correct);
   } else {
     // answer is incorrect
     seconds = seconds - 10;
