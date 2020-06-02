@@ -8,7 +8,7 @@ section {
   height: 100%;
 }
 
-#container {
+#container .endGameContent {
   margin: 20px auto;
   background-color: white;
   height: 300px;
