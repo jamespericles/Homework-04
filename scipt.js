@@ -135,7 +135,7 @@ function renderQuestion() {
 
 function checkAnswer(answer) {
   if (answer == questions[runningQuestion].correct) {
-    answer is correct
+    // answer is correct
     score++;
     scoreEl.innerHTML = score;
   } else {
@@ -169,6 +169,7 @@ function scoreRender() {
   choice3.style.display = "none";
   choice4.style.display = "none";
   clearInterval(gameTimer);
+  // Store score in users localStorage
   if (highScore !== null) {
     if (score > highScore) {
       localStorage.setItem("High Score", score);

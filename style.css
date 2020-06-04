@@ -73,3 +73,11 @@ button {
 #endGame {
   display: none;
 }
+
+#endTable {
+  width: 100%;
+}
+
+.row {
+  width: 50%;
+}
