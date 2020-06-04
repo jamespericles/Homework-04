@@ -177,6 +177,6 @@ function scoreRender() {
       localStorage.setItem("High Score", score);
     }
   } else {
-    localStorage.setItem("high Score", score);
+    localStorage.setItem("High Score", score);
   }
 }
