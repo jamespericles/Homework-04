@@ -27,7 +27,7 @@
 - Make quiz area reamin in the same position after header disappears
 <!-- - Store highscores on local files -->
 - Fix question bug where wrong answers make some questions disappear
-- write the score to the table
+<!-- - write the score to the table -->
 
 Notes: I expect that the stop propogation from 01-Class-Content/04-Web-APIs/01-Activities/16-Ins_Event_Bubbling will come in handy
 
