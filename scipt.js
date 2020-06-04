@@ -135,14 +135,14 @@ function renderQuestion() {
 
 function checkAnswer(answer) {
   if (answer == questions[runningQuestion].correct) {
-    // answer is correct
+    answer is correct
     score++;
     scoreEl.innerHTML = score;
   } else {
     // answer is incorrect
     seconds = seconds - 10;
     gameTimer(seconds);
-    runningQuestion++;
+    // runningQuestion++;
     renderQuestion();
   }
   count = 0;
@@ -171,9 +171,9 @@ function scoreRender() {
   clearInterval(gameTimer);
   if (highScore !== null) {
     if (score > highScore) {
-      localStorage.setItem("highScore", score);
+      localStorage.setItem("High Score", score);
     }
   } else {
-    localStorage.setItem("highScore", score);
+    localStorage.setItem("high Score", score);
   }
 }
