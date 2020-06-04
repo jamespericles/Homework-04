@@ -180,5 +180,5 @@ function scoreRender() {
     localStorage.setItem("High Score", score);
   }
   console.log(score);
-  scoreLocation.document.write(score);
+  scoreLocation.textContent = score;
 }
