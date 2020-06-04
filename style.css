@@ -81,3 +81,9 @@ button {
 .row {
   width: 50%;
 }
+
+#scoreLocation,
+#nameLocation {
+  width: 50%;
+  text-align: right;
+}

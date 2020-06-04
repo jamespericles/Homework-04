@@ -179,6 +179,6 @@ function scoreRender() {
   } else {
     localStorage.setItem("High Score", score);
   }
-  console.log(score);
   scoreLocation.textContent = score;
+  scoreLocation.setAttribute("class", "row");
 }
