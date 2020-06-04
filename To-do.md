@@ -27,7 +27,8 @@
 <!-- - Make timer not beign until start is clicked -->
 - Make locations of timer and question correct
 - Make quiz area reamin in the same position after header disappears
-- Store highscores on local files
+<!-- - Store highscores on local files -->
+- Fix question bug where wrong answers make some questions disappear
 
 Notes: I expect that the stop propogation from 01-Class-Content/04-Web-APIs/01-Activities/16-Ins_Event_Bubbling will come in handy
 
