@@ -18,6 +18,7 @@ let finalCountdown = false;
 let runningQuestion = 0;
 let score = 0;
 let countdownTimer;
+let highScore = localStorage.getItem("highscore");
 
 // Quiz questions
 let questions = [
@@ -168,4 +169,11 @@ function scoreRender() {
   choice3.style.display = "none";
   choice4.style.display = "none";
   clearInterval(gameTimer);
+  if (highScore !== null) {
+    if (score > highScore) {
+      localStorage.setItem("highScore", score);
+    }
+  } else {
+    localStorage.setItem("highScore", score);
+  }
 }
