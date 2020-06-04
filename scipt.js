@@ -179,4 +179,6 @@ function scoreRender() {
   } else {
     localStorage.setItem("High Score", score);
   }
+  console.log(score);
+  scoreLocation.document.write(score);
 }

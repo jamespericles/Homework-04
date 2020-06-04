@@ -2,17 +2,15 @@
 <!-- - Create style.css -->
 <!-- - Create script.js -->
 
-'
-
 - Validate each file upon completion
     <!-- - Explain the rules to user -->
     <!-- - number of questions -->
       <!-- - wrong answers take time away from timer -->
-        <!-- -competing for a high score -->
-        <!-- - Create functioning start button -->
-          <!-- - upon clicking start, a timer starts -->
-            <!-- - Have timer visible and actively counting down -->
-          <!-- - upon clicking start, user is prompted with first question -->
+      <!-- -competing for a high score -->
+      <!-- - Create functioning start button -->
+      <!-- - upon clicking start, a timer starts -->
+      <!-- - Have timer visible and actively counting down -->
+      <!-- - upon clicking start, user is prompted with first question -->
   - show user how many total questions in quiz
   - show user their current position in quiz
     <!-- - After answering a question, user is prompted with the next question -->
@@ -29,6 +27,7 @@
 - Make quiz area reamin in the same position after header disappears
 <!-- - Store highscores on local files -->
 - Fix question bug where wrong answers make some questions disappear
+- write the score to the table
 
 Notes: I expect that the stop propogation from 01-Class-Content/04-Web-APIs/01-Activities/16-Ins_Event_Bubbling will come in handy
 
