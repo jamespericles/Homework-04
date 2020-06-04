@@ -2,6 +2,8 @@
 <!-- - Create style.css -->
 <!-- - Create script.js -->
 
+'
+
 - Validate each file upon completion
     <!-- - Explain the rules to user -->
     <!-- - number of questions -->
