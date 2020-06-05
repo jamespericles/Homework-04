@@ -186,4 +186,5 @@ function scoreRender() {
   scoreLocation.textContent = score;
   scoreLocation.setAttribute("class", "row");
   timeLocation.textContent = countdownTimer;
+  timeLocation.setAttribute("class", "row");
 }
