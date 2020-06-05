@@ -13,6 +13,7 @@ const header = document.getElementById("main-header");
 const endGame = document.getElementById("endGame");
 const nameLocation = document.getElementById("nameLocation");
 const scoreLocation = document.getElementById("scoreLocation");
+const timeLocation = document.getElementById("timeLocation");
 let isWaiting = false;
 let isRunning = false;
 let seconds = 120;
@@ -20,7 +21,7 @@ let finalCountdown = false;
 let runningQuestion = 0;
 let score = 0;
 let countdownTimer;
-let highScore = localStorage.getItem("highscore");
+let highScore = localStorage.getItem("highScore");
 
 // Quiz questions
 let questions = [
@@ -174,11 +175,15 @@ function scoreRender() {
   // Store score in users localStorage
   if (highScore !== null) {
     if (score > highScore) {
-      localStorage.setItem("High Score", score);
+      localStorage.setItem("highScore", score);
     }
   } else {
-    localStorage.setItem("High Score", score);
+    localStorage.setItem("highScore", score);
+  }
+  if (countdownTimer !== null) {
+    localStorage.setItem("time", countdownTimer);
   }
   scoreLocation.textContent = score;
   scoreLocation.setAttribute("class", "row");
+  timeLocation.textContent = countdownTimer;
 }
