@@ -185,6 +185,10 @@ function scoreRender() {
   }
   scoreLocation.textContent = score;
   scoreLocation.setAttribute("class", "row");
+  Number(countdownTimer);
   timeLocation.textContent = countdownTimer;
+
   timeLocation.setAttribute("class", "row");
+  console.log(timeLocation);
+  console.log(typeof timeLocation);
 }

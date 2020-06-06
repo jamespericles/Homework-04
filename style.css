@@ -1,5 +1,4 @@
 body {
-  background: rgba(153, 153, 243, 0.726);
   padding-left: 20%;
   padding-right: 10%;
 }
@@ -85,5 +84,5 @@ button {
 #scoreLocation,
 #nameLocation {
   width: 50%;
-  text-align: right;
+  text-align: center;
 }
