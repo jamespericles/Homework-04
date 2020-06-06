@@ -23,6 +23,13 @@
         Congradulations on completing the quiz! Don't forget to submit your name
         below!
       </p>
+      <form name="endForm" method="get">
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname" /><br /><br />
+        <label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lname" /><br /><br />
+        <input type="button" onclick="formSubmit()" value="Send Name!" />
+      </form>
       <table id="endTable">
         <tr>
           <th class="row">

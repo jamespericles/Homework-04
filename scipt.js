@@ -23,6 +23,9 @@ let score = 0;
 let countdownTimer;
 let highScore = localStorage.getItem("highScore");
 
+function formSubmit() {
+  document.forms["endForm"].submit();
+}
 // Quiz questions
 let questions = [
   {
@@ -147,6 +150,7 @@ function checkAnswer(answer) {
     gameTimer(seconds);
     // runningQuestion++;
     renderQuestion();
+    alert("Try again!");
   }
   count = 0;
   if (runningQuestion < lastQuestion) {
@@ -187,8 +191,8 @@ function scoreRender() {
   scoreLocation.setAttribute("class", "row");
   Number(countdownTimer);
   timeLocation.textContent = countdownTimer;
-
   timeLocation.setAttribute("class", "row");
+
   console.log(timeLocation);
   console.log(typeof timeLocation);
 }
