@@ -190,7 +190,4 @@ function scoreRender() {
   Number(countdownTimer);
   timeLocation.textContent = countdownTimer;
   timeLocation.setAttribute("class", "row");
-
-  console.log(timeLocation);
-  console.log(typeof timeLocation);
 }
