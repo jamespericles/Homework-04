@@ -148,13 +148,11 @@ function checkAnswer(answer) {
     // answer is incorrect
     seconds = seconds - 10;
     gameTimer(seconds);
-    // runningQuestion++;
     renderQuestion();
     alert("Try again!");
   }
   count = 0;
   if (runningQuestion < lastQuestion) {
-    runningQuestion++;
     renderQuestion();
   } else {
     // end the quiz and show the score
