@@ -25,6 +25,7 @@ let highScore = localStorage.getItem("highScore");
 function formSubmit() {
   document.forms["endForm"].submit();
 }
+
 // Quiz questions
 let questions = [
   {
@@ -86,8 +87,10 @@ let questions = [
 if (startEl) {
   startEl.addEventListener("click", startQuiz);
 }
+
 // Create score board
 scoreEl.innerHTML = score;
+
 // Create timer
 function gameTimer() {
   let minutes = Math.round((seconds - 30) / 60);
@@ -107,6 +110,7 @@ function gameTimer() {
     endQuiz();
   }
 }
+
 // Start quiz
 function startQuiz() {
   startEl.style.display = "none";
@@ -120,6 +124,7 @@ function startQuiz() {
   countdownTimer = setInterval(gameTimer, 1000);
 }
 const lastQuestion = questions.length - 1;
+
 // Render questions
 function renderQuestion() {
   let q = questions[runningQuestion];
@@ -129,6 +134,7 @@ function renderQuestion() {
   choice3.innerHTML = q.choice3;
   choice4.innerHTML = q.choice4;
 }
+
 // check answer
 function checkAnswer(answer) {
   if (answer == questions[runningQuestion].correct) {
@@ -153,6 +159,7 @@ function checkAnswer(answer) {
     scoreRender();
   }
 }
+
 // End quiz elements
 function endQuiz() {
   timerEl.style.display = "none";
@@ -165,6 +172,7 @@ function scoreRender() {
   choice3.style.display = "none";
   choice4.style.display = "none";
   clearInterval(gameTimer);
+
   // Store score in users localStorage
   if (highScore !== null) {
     if (score > highScore) {
@@ -178,9 +186,6 @@ function scoreRender() {
   }
   scoreLocation.textContent = score;
   scoreLocation.setAttribute("class", "row");
-  Number(countdownTimer);
   timeLocation.textContent = countdownTimer;
   timeLocation.setAttribute("class", "row");
-  console.log(timeLocation);
-  console.log(typeof timeLocation);
 }
