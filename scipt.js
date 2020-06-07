@@ -144,6 +144,7 @@ function checkAnswer(answer) {
     // answer is correct
     score++;
     scoreEl.innerHTML = score;
+    runningQuestion++;
   } else {
     // answer is incorrect
     seconds = seconds - 10;
