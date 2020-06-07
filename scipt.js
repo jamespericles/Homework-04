@@ -22,7 +22,6 @@ let runningQuestion = 0;
 let score = 0;
 let countdownTimer;
 let highScore = localStorage.getItem("highScore");
-
 function formSubmit() {
   document.forms["endForm"].submit();
 }
@@ -84,13 +83,11 @@ let questions = [
     incorrect: "4",
   },
 ];
-
 if (startEl) {
   startEl.addEventListener("click", startQuiz);
 }
 // Create score board
 scoreEl.innerHTML = score;
-
 // Create timer
 function gameTimer() {
   let minutes = Math.round((seconds - 30) / 60);
@@ -99,7 +96,6 @@ function gameTimer() {
   if (remainingSeconds < 10) {
     remainingSeconds = "0" + remainingSeconds;
   }
-
   document.getElementById("timer").innerHTML = minutes + ":" + remainingSeconds;
   if (finalCountdown) {
     endQuiz();
@@ -111,7 +107,6 @@ function gameTimer() {
     endQuiz();
   }
 }
-
 // Start quiz
 function startQuiz() {
   startEl.style.display = "none";
@@ -124,36 +119,33 @@ function startQuiz() {
   gameTimer(seconds);
   countdownTimer = setInterval(gameTimer, 1000);
 }
-
 const lastQuestion = questions.length - 1;
 // Render questions
 function renderQuestion() {
   let q = questions[runningQuestion];
-
   question.innerHTML = "<p>" + q.question + "</p>";
   choice1.innerHTML = q.choice1;
   choice2.innerHTML = q.choice2;
   choice3.innerHTML = q.choice3;
   choice4.innerHTML = q.choice4;
 }
-
 // check answer
-
 function checkAnswer(answer) {
   if (answer == questions[runningQuestion].correct) {
     // answer is correct
     score++;
     scoreEl.innerHTML = score;
-    runningQuestion++;
   } else {
     // answer is incorrect
     seconds = seconds - 10;
     gameTimer(seconds);
+    // runningQuestion++;
     renderQuestion();
     alert("Try again!");
   }
   count = 0;
   if (runningQuestion < lastQuestion) {
+    runningQuestion++;
     renderQuestion();
   } else {
     // end the quiz and show the score
@@ -161,12 +153,10 @@ function checkAnswer(answer) {
     scoreRender();
   }
 }
-
 // End quiz elements
 function endQuiz() {
   timerEl.style.display = "none";
 }
-
 function scoreRender() {
   endGame.style.display = "block";
   quiz.style.display = "none";
@@ -188,6 +178,9 @@ function scoreRender() {
   }
   scoreLocation.textContent = score;
   scoreLocation.setAttribute("class", "row");
+  Number(countdownTimer);
   timeLocation.textContent = countdownTimer;
   timeLocation.setAttribute("class", "row");
+  console.log(timeLocation);
+  console.log(typeof timeLocation);
 }
