@@ -145,7 +145,6 @@ function checkAnswer(answer) {
     // answer is incorrect
     seconds = seconds - 10;
     gameTimer(seconds);
-    // runningQuestion++;
     renderQuestion();
     alert("Try again!");
   }
@@ -153,6 +152,7 @@ function checkAnswer(answer) {
   if (runningQuestion < lastQuestion) {
     runningQuestion++;
     renderQuestion();
+    console.log("here");
   } else {
     // end the quiz and show the score
     clearInterval(gameTimer);
