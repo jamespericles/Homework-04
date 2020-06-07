@@ -141,6 +141,7 @@ function checkAnswer(answer) {
     // answer is correct
     score++;
     scoreEl.innerHTML = score;
+    runningQuestion++;
   } else {
     // answer is incorrect
     seconds = seconds - 10;
@@ -149,8 +150,7 @@ function checkAnswer(answer) {
     alert("Try again!");
   }
   count = 0;
-  if (runningQuestion < lastQuestion) {
-    runningQuestion++;
+  if (runningQuestion <= lastQuestion) {
     renderQuestion();
     console.log("here");
   } else {
