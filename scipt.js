@@ -8,12 +8,12 @@ const choice1 = document.getElementById("1");
 const choice2 = document.getElementById("2");
 const choice3 = document.getElementById("3");
 const choice4 = document.getElementById("4");
-const scoreEl = document.getElementById("score");
+let scoreEl = document.getElementById("score");
 const header = document.getElementById("main-header");
 const endGame = document.getElementById("endGame");
 const initialsLocation = document.getElementById("initialsLocation");
 const scoreLocation = document.getElementById("scoreLocation");
-const timeLocation = document.getElementById("timeLocation");
+let timeLocation = document.getElementById("timeLocation");
 
 let isWaiting = false;
 let isRunning = false;
@@ -190,6 +190,6 @@ function scoreRender() {
   }
   scoreLocation.textContent = score;
   scoreLocation.setAttribute("class", "row");
-  timeLocation.innerText = timer;
+  timeLocation.innerText = timerEl.innerHTML;
   timeLocation.setAttribute("class", "row");
 }
