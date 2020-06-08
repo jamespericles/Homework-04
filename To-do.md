@@ -17,17 +17,17 @@
     <!-- - If users answer is incorrect, they lose time from the timer -->
     <!-- - if all quetions are answered, the game ends -->
 - if time runs out, the game ends
-- after the game is finished, users are shown their score and asked to save their initials
+<!-- - after the game is finished, users are shown their score and asked to save their initials -->
 - allow users to press buttons on the key pad to answer questions besides clicking
   <!-- - Have text in buttons be centered -->
   <!-- - Make answer buttons hidden until user press begin -->
 - Make timer inline with where the questions are
-<!-- - Make timer not beign until start is clicked -->
-- Make locations of timer and question correct
+  <!-- - Make timer not beign until start is clicked -->
+  <!-- - Make locations of timer and question correct -->
 - Make quiz area reamin in the same position after header disappears
-<!-- - Store highscores on local files -->
-- Fix question bug where wrong answers make some questions disappear
-<!-- - write the score to the table -->
+  <!-- - Store highscores on local files -->
+  <!-- - Fix question bug where wrong answers make some questions disappear -->
+  <!-- - write the score to the table -->
 
 Notes: I expect that the stop propogation from 01-Class-Content/04-Web-APIs/01-Activities/16-Ins_Event_Bubbling will come in handy
 
