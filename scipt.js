@@ -99,6 +99,7 @@ function gameTimer() {
   }
   document.getElementById("timer").innerHTML = minutes + ":" + remainingSeconds;
   if (finalCountdown) {
+    scoreRender();
     endQuiz();
   } else {
     isWaiting = true;
@@ -106,6 +107,7 @@ function gameTimer() {
   }
   if (minutes == 0 && remainingSeconds == "00") {
     endQuiz();
+    scoreRender();
   }
 }
 
