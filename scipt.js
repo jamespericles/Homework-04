@@ -190,6 +190,6 @@ function scoreRender() {
   }
   scoreLocation.textContent = score;
   scoreLocation.setAttribute("class", "row");
-  timeLocation.textContent = countdownTimer;
+  timeLocation.innerText = timer;
   timeLocation.setAttribute("class", "row");
 }
