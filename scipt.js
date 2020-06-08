@@ -11,9 +11,10 @@ const choice4 = document.getElementById("4");
 const scoreEl = document.getElementById("score");
 const header = document.getElementById("main-header");
 const endGame = document.getElementById("endGame");
-const nameLocation = document.getElementById("nameLocation");
+const initialsLocation = document.getElementById("initialsLocation");
 const scoreLocation = document.getElementById("scoreLocation");
 const timeLocation = document.getElementById("timeLocation");
+
 let isWaiting = false;
 let isRunning = false;
 let seconds = 120;
@@ -22,9 +23,6 @@ let runningQuestion = 0;
 let score = 0;
 let countdownTimer;
 let highScore = localStorage.getItem("highScore");
-function formSubmit() {
-  document.forms["endForm"].submit();
-}
 
 // Quiz questions
 let questions = [
@@ -158,7 +156,11 @@ function checkAnswer(answer) {
     scoreRender();
   }
 }
-
+function formSubmit() {
+  const initials = document.getElementById("initials").value;
+  initialsLocation.textContent = initials;
+  initials.setAttribute("class", "row");
+}
 // End quiz elements
 function endQuiz() {
   timerEl.style.display = "none";

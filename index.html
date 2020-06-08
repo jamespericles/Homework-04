@@ -23,7 +23,7 @@
         Congradulations on completing the quiz! Don't forget to submit your
         initials below!
       </p>
-      <form name="endForm" method="get">
+      <form name="endForm" onsubmit="formSubmit();" method="get">
         <label for="initials">Initials:</label>
         <input type="text" id="initials" name="initials" /><br /><br />
         <br /><br />
@@ -42,7 +42,7 @@
           </th>
         </tr>
         <tr>
-          <td id="nameLocation" class="row"></td>
+          <td id="initialsLocation" class="row"></td>
           <td id="scoreLocation" class="row"></td>
           <td id="timeLocation" class="row"></td>
         </tr>
