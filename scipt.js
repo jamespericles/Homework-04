@@ -22,7 +22,6 @@ let runningQuestion = 0;
 let score = 0;
 let countdownTimer;
 let highScore = localStorage.getItem("highScore");
-let endTime;
 function formSubmit() {
   document.forms["endForm"].submit();
 }
@@ -93,33 +92,23 @@ if (startEl) {
 scoreEl.innerHTML = score;
 
 // Create timer
-// function gameTimer() {
-//   let minutes = Math.round((seconds - 30) / 60);
-//   let remainingSeconds = seconds % 60;
-//   remainingSeconds.toPrecision(2);
-//   if (remainingSeconds < 10) {
-//     remainingSeconds = "0" + remainingSeconds;
-//   }
-//   document.getElementById("timer").innerHTML = minutes + ":" + remainingSeconds;
-//   if (finalCountdown) {
-//     endQuiz();
-//   } else {
-//     isWaiting = true;
-//     seconds--;
-//   }
-//   if (minutes == 0 && remainingSeconds == "00") {
-//     endQuiz();
-//   }
-// }
 function gameTimer() {
-  let missing = endTime - new Date().getTime();
-
-  if (missing < 0) missing = 0;
-
-  let timer = new Date(missing).toISOString().substr(15, 4);
+  let minutes = Math.round((seconds - 30) / 60);
+  let remainingSeconds = seconds % 60;
+  remainingSeconds.toPrecision(2);
+  if (remainingSeconds < 10) {
+    remainingSeconds = "0" + remainingSeconds;
+  }
   document.getElementById("timer").innerHTML = minutes + ":" + remainingSeconds;
-
-  if (!missing) endQuiz();
+  if (finalCountdown) {
+    endQuiz();
+  } else {
+    isWaiting = true;
+    seconds--;
+  }
+  if (minutes == 0 && remainingSeconds == "00") {
+    endQuiz();
+  }
 }
 
 // Start quiz
@@ -131,8 +120,8 @@ function startQuiz() {
   }
   renderQuestion();
   quiz.style.display = "block";
-  endTime = new Date().getTime() + 120 * 1000;
-  // countdownTimer = setInterval(gameTimer, 1000);
+  gameTimer(seconds);
+  countdownTimer = setInterval(gameTimer, 1000);
 }
 const lastQuestion = questions.length - 1;
 
