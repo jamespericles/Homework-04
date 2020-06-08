@@ -152,7 +152,6 @@ function checkAnswer(answer) {
   count = 0;
   if (runningQuestion <= lastQuestion) {
     renderQuestion();
-    console.log("here");
   } else {
     // end the quiz and show the score
     clearInterval(gameTimer);
