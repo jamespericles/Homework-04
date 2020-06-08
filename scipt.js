@@ -160,6 +160,7 @@ function formSubmit() {
   const initials = document.getElementById("initials").value;
   initialsLocation.textContent = initials;
   initialsLocation.setAttribute("class", "row");
+  localStorage.setItem("initials", initials);
 }
 // End quiz elements
 function endQuiz() {
