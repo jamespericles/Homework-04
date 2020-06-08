@@ -159,7 +159,7 @@ function checkAnswer(answer) {
 function formSubmit() {
   const initials = document.getElementById("initials").value;
   initialsLocation.textContent = initials;
-  initials.setAttribute("class", "row");
+  initialsLocation.setAttribute("class", "row");
 }
 // End quiz elements
 function endQuiz() {
