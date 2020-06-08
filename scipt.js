@@ -17,7 +17,7 @@ const timeLocation = document.getElementById("timeLocation");
 
 let isWaiting = false;
 let isRunning = false;
-let seconds = 3;
+let seconds = 120;
 let finalCountdown = false;
 let runningQuestion = 0;
 let score = 0;
