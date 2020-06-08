@@ -14,7 +14,6 @@ const endGame = document.getElementById("endGame");
 const initialsLocation = document.getElementById("initialsLocation");
 const scoreLocation = document.getElementById("scoreLocation");
 let timeLocation = document.getElementById("timeLocation");
-
 let isWaiting = false;
 let isRunning = false;
 let seconds = 120;
@@ -82,6 +81,7 @@ let questions = [
     incorrect: "4",
   },
 ];
+// Event listener for clicking begin
 if (startEl) {
   startEl.addEventListener("click", startQuiz);
 }
@@ -135,7 +135,7 @@ function renderQuestion() {
   choice4.innerHTML = q.choice4;
 }
 
-// check answer
+// Check answer
 function checkAnswer(answer) {
   if (answer == questions[runningQuestion].correct) {
     // answer is correct
@@ -158,12 +158,15 @@ function checkAnswer(answer) {
     scoreRender();
   }
 }
+
+// Allow user to submit their initials to be associated with their score
 function formSubmit() {
   const initials = document.getElementById("initials").value;
   initialsLocation.textContent = initials;
   initialsLocation.setAttribute("class", "row");
   localStorage.setItem("initials", initials);
 }
+
 // End quiz elements
 function endQuiz() {
   timerEl.style.display = "none";
