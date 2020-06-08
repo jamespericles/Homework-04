@@ -154,7 +154,7 @@ function checkAnswer(answer) {
     renderQuestion();
   } else {
     // end the quiz and show the score
-    clearInterval(gameTimer);
+    clearInterval(countdownTimer);
     scoreRender();
   }
 }
@@ -175,7 +175,7 @@ function scoreRender() {
   choice2.style.display = "none";
   choice3.style.display = "none";
   choice4.style.display = "none";
-  clearInterval(gameTimer);
+  clearInterval(countdownTimer);
 
   // Store score in users localStorage
   if (highScore !== null) {
