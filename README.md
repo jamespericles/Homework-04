@@ -24,13 +24,17 @@ This simple application is a short, five question quiz that utilizes Javascript 
 
 ### <a name="Screenshots"></a>Screenshots
 
+![Start_Quiz](https://github.com/jamespericles/Javascript-Quiz/blob/master/Screenshots/Start_Quiz.png)
+![First_Question](https://github.com/jamespericles/Javascript-Quiz/blob/master/Screenshots/First_Question.png)
+![Highscore](https://github.com/jamespericles/Javascript-Quiz/blob/master/Screenshots/Highscore.png)
+
 ### <a name="Technologies-Used"></a>Technologies Used
 
 This project utilized HTML, CSS, Javascript languages.
 
 ### <a name="Usage"></a>Usage
 
-Day Planner works in any web browser, and is deployed [here](https://jamespericles.github.io/Javascript-Quiz/)
+Javascript Quiz works in any web browser, and is deployed [here](https://jamespericles.github.io/Javascript-Quiz/)
 
 ### <a name="Contributing"></a>Contributing
 
